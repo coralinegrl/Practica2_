@@ -38,7 +38,7 @@
 
     <header>
         <div class="container">
-            <img src="{{ asset('images/yo.jpg') }}" alt="Andrea Saldaña">
+            <img src="{{ asset('images/yo.jpeg') }}" alt="Andrea Saldaña">
             <div class="header-content">
                 <h1>Andrea Saldaña Cavour</h1>
                 <p>Creación de un Perfil Personal en HTML y Estilización con CSS</p>
