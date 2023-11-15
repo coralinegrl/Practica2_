@@ -5,6 +5,9 @@
 
             <img src="{{ asset('images/musica.jpg') }}" :alt="hobbie.name" width="100">
             <p>{{ hobbie.name }}</p>
+            <div class="description">
+                <p></p>
+            </div>
         </div>
     </div>
 </template>

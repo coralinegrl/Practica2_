@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Framework extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name',
+        'level',
+        'year',
+    ];
+
+    public function profile()
+    {
+        return $this->belongsTo(Profile::class);
+    }
+
 }

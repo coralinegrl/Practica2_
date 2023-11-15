@@ -31,13 +31,22 @@ class ProfileController extends Controller
         //
     }
 
-    /**
+
      * Display the specified resource.
      */
     public function show(Profile $profile)
     {
-        //
+        return response()->json([
+            'name' => $profile->name,
+            'lastname' => $profile->lastname,
+            'email' => $profile->user->email,
+            'city' => $profile->city,
+            'country' => $profile->country,
+            'summary' => $profile->summary,
+        ]);
+        return response()->json($profileData);
     }
+
 
     /**
      * Show the form for editing the specified resource.
