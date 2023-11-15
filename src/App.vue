@@ -1,58 +1,103 @@
 <template>
-    <div>
+    <div id="app">
       <TopBar
-        imageSrc="path_to_yo.jpeg"
+        imageSrc="/path/to/yo.jpeg"
         fullName="Andrea Saldaña Cavour"
         title="Creación de un Perfil Personal en HTML y Estilización con CSS"
       />
-      <!-- Repetir este proceso para los otros componentes, pasando los datos como props -->
-      <Interests>
-        <Interest
-          v-for="interest in interests"
-          :key="interest.id"
-          :title="interest.title"
-          :description="interest.description"
-          :imageSrc="interest.imageSrc"
-        />
-      </Interests>
-      <!-- ... -->
+
+      <Description
+        description="Mi nombre es Andrea Saldaña, soy estudiante de Ingeniería Civil en Computación e Informática de la UCN."
+      />
+
+      <PersonalData
+        age="24 años"
+        city="Antofagasta"
+        country="Chile"
+        email="andrea.saldana@alumnos.ucn.cl"
+      />
+
+      <Hobbies
+        v-for="hobby in hobbies"
+        :key="hobby.id"
+        :title="hobby.title"
+        :description="hobby.description"
+        :imageSrc="hobby.imageSrc"
+      />
+
+      <Skills :skills="skills" />
+
+      <SocialLinks :socialMedia="socialMedia" />
     </div>
   </template>
 
   <script>
   import TopBar from './components/TopBar.vue';
-  import Hobbies from './components/Hobbies.vue';
-  import Hobby from './components/Hobby.vue';
-  import Profile from './components/Profile.vue';
   import Description from './components/Description.vue';
-  import Portfolio from './components/Portfolio.vue';
+  import PersonalData from './components/PersonalData.vue';
+  import Hobby from './components/Interest.vue';
+  import Hobbies from './components/Interests.vue';
   import Skills from './components/Skills.vue';
   import SocialLinks from './components/SocialLinks.vue';
-  import PersonalData from './components/PersonalData.vue';
 
   export default {
     name: 'App',
     components: {
-        TopBar,
-        Hobby,
-        Hobbies,
-        Profile,
-        Description,
-        Portfolio,
-        Skills,
-        SocialLinks,
-        PersonalData
+      TopBar,
+      Description,
+      PersonalData,
+      Hobby,
+      Hobbies,
+      Skills,
+      SocialLinks
     },
     data() {
       return {
-        // Suponiendo que tienes una lista de intereses
         hobbies: [
-          { id: 1, title: 'Escuchar música', description: 'Me gusta escuchar música de todo tipo, pero principalmente escucho rock y pop.', imageSrc: 'musica.jpg' },
-            { id: 2, title: 'Jugar Videojuegos', description: 'Me gusta pasar mi tiempo libre jugando videojuegos en mi PC.', imageSrc: 'videojuegos.jpg' },
-            { id: 3, title: 'Dormir', description: 'Me gusta levantarme tarde.', imageSrc: 'dormir.jpg' },
-            { id: 4, title: 'Hacer yoga', description: 'Hago yoga todos los domingos.', imageSrc: 'yoga.jpg' }
+          {
+            id: 1,
+            title: 'Escuchar música',
+            description: 'Me gusta escuchar música de todo tipo, pero principalmente escucho rock y pop.',
+            imageSrc: '/public/images/musica.jpg'
+          },
+          {
+            id: 2,
+            title: 'Jugar videojuegos',
+            description: 'Me gusta pasar mi tiempo libre jugando videojuegos en mi PC.',
+            imageSrc: '/public/images/videojuegos.jpg'
+          },
+          // ... otros intereses
+        ],
+        skills: [
+          {
+            id: 1,
+            technology: 'HTML',
+            level: 'Básico',
+            year: 2023
+          },
+          {
+            id: 2,
+            technology: 'CSS',
+            level: 'Básico',
+            year: 2023
+          },
+          // ... otras habilidades
+        ],
+        socialMedia: [
+          {
+            name: 'Instagram',
+            url: 'https://www.instagram.com/coralinegrl'
+          },
+          {
+            name: 'Twitter',
+            url: 'https://twitter.com/coralinegrl'
+          },
+          {
+            name: 'LinkedIn',
+            url: 'https://www.linkedin.com/in/andrea-salda%C3%B1a-cavour-324883229/'
+          },
+          // ... otras redes sociales
         ]
-        // ... otros datos para otros componentes
       };
     }
   }
