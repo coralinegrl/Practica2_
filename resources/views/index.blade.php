@@ -56,6 +56,7 @@
         <ul>
             <li>Edad: 24 años</li>
             <li>Ciudad de Origen: Antofagasta</li>
+            <li>País: Chile</li>
             <li>Correo Electrónico: andrea.saldana@alumnos.ucn.cl</li>
         </ul>
     </section>
@@ -64,19 +65,31 @@
         <h2>Intereses</h2>
         <div class="interest">
             <img src="{{ asset('images/musica.jpg') }}" alt="Escuchar música" width="100">
-            <p>Escuchar música</p>
+            <p>ESCUCHAR MÚSICA</p>
+            <div class="description">
+                <p>Me gusta escuchar música de todo tipo, pero principalmente escucho rock y pop.</p>
+            </div>
         </div>
         <div class="interest">
             <img src="{{ asset('images/videojuegos.jpg') }}" alt="Jugar videojuegos" width="100">
-            <p>Jugar videojuegos</p>
+            <p>JUGAR VIDEOJUEGOS</p>
+            <div class="description">
+                <p>Me gusta pasar mi tiempo libre jugando videojuegos en mi PC.</p>
+            </div>
         </div>
         <div class="interest">
             <img src="{{ asset('images/dormir.jpg') }}" alt="Dormir" width="100">
-            <p>Dormir</p>
+            <p>DORMIR</p>
+            <div class="description">
+                <p>Me gusta levantarme tarde.</p>
+            </div>
         </div>
         <div class="interest">
             <img src="{{ asset('images/yoga.jpg') }}" alt="Hacer yoga" width="100">
-            <p>Hacer yoga</p>
+            <p>HACER YOGA</p>
+            <div class="description">
+                <p>Hago yoga todos los domingos.</p>
+            </div>
         </div>
     </section>
 
@@ -87,20 +100,24 @@
                 <tr>
                     <th>Tecnología</th>
                     <th>Nivel</th>
+                    <th>Año</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>HTML</td>
                     <td>Básico</td>
+                    <td>2023</td>
                 </tr>
                 <tr>
                     <td>CSS</td>
                     <td>Básico</td>
+                    <td>2023</td>
                 </tr>
                 <tr>
                     <td>Python</td>
                     <td>Básico</td>
+                    <td>2022</td>
                 </tr>
             </tbody>
         </table>

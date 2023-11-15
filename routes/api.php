@@ -21,3 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // Obtener información del usuario
 Route::get('/user/{id}', [UserController::class, 'show']);
+
+// Obtener el perfil del usuario
+Route::get('/api/profile', [UserController::class, 'profile']);
+?>
