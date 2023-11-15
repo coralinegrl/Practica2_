@@ -1,29 +1,25 @@
 <template>
-    <div class="hobbies">
-        <h2>Hobbies</h2>
-        <div class="hobbie" v-for="hobbie in hobbies" :key="hobbie.id">
-
-            <img src="{{ asset('images/musica.jpg') }}" :alt="hobbie.name" width="100">
-            <p>{{ hobbie.name }}</p>
-            <div class="description">
-                <p></p>
-            </div>
-        </div>
+    <div class="interest">
+      <img :src="imageSrc" :alt="title" width="100" />
+      <p>{{ title.toUpperCase() }}</p>
+      <div class="description">
+        <p>{{ description }}</p>
+      </div>
     </div>
-</template>
-<script lang="ts">
-import { defineComponent } from 'vue';
+  </template>
 
-export default defineComponent({
-    name: 'Hobby',
+  <script>
+  export default {
+    name: 'Interest',
     props: {
-        hobbies: {
-            type: Array,
-            required: true,
-        },
-    },
-});
-</script>
+      title: String,
+      description: String,
+      imageSrc: String
+    }
+  }
+  </script>
+
+
 <style scoped>
 .hobbies {
     display: flex;
