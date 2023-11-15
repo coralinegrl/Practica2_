@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <title>Andrea Saldaña Cavour - Currículum</title>
     <style>
@@ -12,7 +14,7 @@
             flex-wrap: wrap;
             justify-content: space-between;
         }
-    
+
         .interest {
             width: 100px;
             margin-bottom: 20px;
@@ -20,11 +22,11 @@
             flex-direction: column;
             align-items: center;
         }
-    
+
         .interest p {
             margin-bottom: 0px;
         }
-    
+
         .interest img {
             width: 100%;
             max-width: 100px;
