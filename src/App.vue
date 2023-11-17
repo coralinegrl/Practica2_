@@ -1,7 +1,7 @@
 <template>
     <div id="app">
       <TopBar
-        imageSrc="/path/to/yo.jpeg"
+        imageSrc="/images/yo.jpeg"
         fullName="Andrea Saldaña Cavour"
         title="Creación de un Perfil Personal en HTML y Estilización con CSS"
       />
@@ -17,13 +17,15 @@
         email="andrea.saldana@alumnos.ucn.cl"
       />
 
-      <Hobbies
-        v-for="hobby in hobbies"
-        :key="hobby.id"
-        :title="hobby.title"
-        :description="hobby.description"
-        :imageSrc="hobby.imageSrc"
-      />
+      <Hobbies>
+        <Hobby
+          v-for="hobby in hobbies"
+          :key="hobby.id"
+          :title="hobby.title"
+          :description="hobby.description"
+          :imageSrc="hobby.imageSrc"
+        />
+      </Hobbies>
 
       <Skills :skills="skills" />
 
@@ -35,21 +37,25 @@
   import TopBar from './components/TopBar.vue';
   import Description from './components/Description.vue';
   import PersonalData from './components/PersonalData.vue';
-  import Hobby from './components/Interest.vue';
-  import Hobbies from './components/Interests.vue';
+  import Hobby from './components/Hobby.vue';
+  import Hobbies from './components/Hobbies.vue';
   import Skills from './components/Skills.vue';
   import SocialLinks from './components/SocialLinks.vue';
+  import Profile from './components/Profile.vue';
+  import Portfolio from './components/Portfolio.vue';
 
   export default {
     name: 'App',
     components: {
-      TopBar,
-      Description,
-      PersonalData,
-      Hobby,
-      Hobbies,
-      Skills,
-      SocialLinks
+        TopBar,
+        Description,
+        PersonalData,
+        Hobby,
+        Hobbies,
+        Skills,
+        SocialLinks,
+        Profile,
+        Portfolio,
     },
     data() {
       return {
@@ -58,15 +64,26 @@
             id: 1,
             title: 'Escuchar música',
             description: 'Me gusta escuchar música de todo tipo, pero principalmente escucho rock y pop.',
-            imageSrc: '/public/images/musica.jpg'
+            imageSrc: '/images/musica.jpg'
           },
           {
             id: 2,
             title: 'Jugar videojuegos',
             description: 'Me gusta pasar mi tiempo libre jugando videojuegos en mi PC.',
-            imageSrc: '/public/images/videojuegos.jpg'
+            imageSrc: '/images/videojuegos.jpg'
           },
-          // ... otros intereses
+          {
+            id: 3,
+            title: 'Dormir',
+            description: 'Me gusta levantarme tarde.',
+            imageSrc: '/images/dormir.jpg'
+          },
+          {
+            id: 4,
+            title: 'Hacer yoga',
+            description: 'Hago yoga todos los domingos.',
+            imageSrc: '/images/yoga.jpg'
+          }
         ],
         skills: [
           {
@@ -81,7 +98,12 @@
             level: 'Básico',
             year: 2023
           },
-          // ... otras habilidades
+          {
+            id: 3,
+            technology: 'Python',
+            level: 'Básico',
+            year: 2022
+          }
         ],
         socialMedia: [
           {
@@ -95,8 +117,7 @@
           {
             name: 'LinkedIn',
             url: 'https://www.linkedin.com/in/andrea-salda%C3%B1a-cavour-324883229/'
-          },
-          // ... otras redes sociales
+          }
         ]
       };
     }

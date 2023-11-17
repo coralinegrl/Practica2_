@@ -1,24 +1,47 @@
 <template>
-    <div class="container">
-        <img src="{{ asset('images/yo.jpeg') }}" alt="Andrea Saldaña">
+    <header>
+      <div class="container">
+        <!-- Usa enlace dinámico para la fuente de la imagen y alt para mejorar la accesibilidad -->
+        <img :src="imageSrc" :alt="altText" />
         <div class="header-content">
-            <h1>Andrea Saldaña Cavour</h1>
-            <p>Creación de un Perfil Personal en HTML y Estilización con CSS</p>
+          <!-- fullName y title son propiedades que se pasan al componente -->
+          <h1>{{ fullName }}</h1>
+          <p>{{ title }}</p>
         </div>
-    </div>
-</template>
+      </div>
+    </header>
+  </template>
 
-<script>
-export default {
+  <script>
+  export default {
+    name: 'TopBar',
+    props: {
+      imageSrc: {
+        type: String,
+        required: true // Marca la imagen como requerida
+      },
+      fullName: {
+        type: String,
+        default: 'Andrea Saldaña Cavour' // Proporciona un valor por defecto
+      },
+      title: {
+        type: String,
+        default: 'Creación de un Perfil Personal en HTML y Estilización con CSS' // Proporciona un valor por defecto
+      },
+      altText: {
+        type: String,
+        default: 'Andrea Saldaña' // Proporciona un valor por defecto para el alt text
+      }
+    }
+  }
+  </script>
 
-    // Your JavaScript code here
-}
-</script>
-
-<style scoped>
-.container {
+  <style scoped>
+  .container {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-}
-</style>
+  }
+
+  /* Añade estilos para img y .header-content si es necesario */
+  </style>

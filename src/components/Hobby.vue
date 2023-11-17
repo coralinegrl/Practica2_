@@ -1,47 +1,40 @@
 <template>
     <div class="interest">
-      <img :src="imageSrc" :alt="title" width="100" />
-      <p>{{ title.toUpperCase() }}</p>
-      <div class="description">
-        <p>{{ description }}</p>
-      </div>
+      <img :src="image" :alt="altText" width="100">
+      <p>{{ title }}</p>
     </div>
   </template>
 
   <script>
   export default {
-    name: 'Interest',
+    name: 'Hobby',
     props: {
-      title: String,
-      description: String,
-      imageSrc: String
+      image: {
+        type: String,
+        required: true,
+      },
+      title: {
+        type: String,
+        required: true,
+      },
+      altText: {
+        type: String,
+        required: true,
+      }
     }
   }
   </script>
 
-
-<style scoped>
-.hobbies {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.hobbies {
-    width: 100px;
+  <style scoped>
+  /* Estilos específicos para Hobby */
+  .interest {
     margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+    text-align: center;
+  }
 
-.hobbies p {
-    margin-bottom: 0px;
-}
-
-.hobbies img {
-    width: 100%;
-    max-width: 100px;
-    height: 100px;
-}
-
+  .interest img {
+    width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+    max-width: 100px; /* Máximo ancho de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+  }
+  </style>

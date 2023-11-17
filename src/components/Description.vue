@@ -6,8 +6,10 @@
         </div>
     </div>
 </template>
+
 <script>
 export default {
+    name: 'Description',
     // Your JavaScript code here
 }
 </script>
@@ -16,3 +18,4 @@ export default {
 .about {
     margin-bottom: 20px;
 }
+</style>
