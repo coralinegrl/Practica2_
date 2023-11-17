@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/portfolio', function () {
+
+Route::get('/{any}', function () {
     return view('index');
-});
+})->where('any', '.*');
+
+

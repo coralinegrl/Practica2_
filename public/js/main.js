@@ -14147,32 +14147,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.mjs");
-/* harmony import */ var _components_Profile_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Profile.vue */ "./src/components/Profile.vue");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.mjs");
 /* harmony import */ var _components_Home_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Home.vue */ "./src/components/Home.vue");
+/* harmony import */ var _components_Profile_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Profile.vue */ "./src/components/Profile.vue");
+/* harmony import */ var _App_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./App.vue */ "./src/App.vue");
 
 
 
 
-// Define las rutas de tu aplicación
-var routes = [{
-  path: '/',
-  name: 'Home',
-  component: _components_Home_vue__WEBPACK_IMPORTED_MODULE_1__["default"] // Asigna el componente Home a la ruta "/"
-}, {
-  path: '/portfolio',
-  name: 'Portfolio',
-  component: _components_Profile_vue__WEBPACK_IMPORTED_MODULE_0__["default"] // Asigna el componente Profile a la ruta "/portfolio"
-}
-// Otras rutas aquí
-];
 
-// Crea la instancia del router
-var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_2__.createRouter)({
-  history: (0,vue_router__WEBPACK_IMPORTED_MODULE_2__.createWebHistory)(),
-  routes: routes // versión corta para `routes: routes`
+var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_4__.createRouter)({
+  history: (0,vue_router__WEBPACK_IMPORTED_MODULE_4__.createWebHistory)(),
+  routes: [{
+    path: '/',
+    component: _components_Home_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  }, {
+    path: '/portfolio',
+    component: _components_Profile_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  }]
 });
-
+var app = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)(_App_vue__WEBPACK_IMPORTED_MODULE_3__["default"]);
+app.use(router);
+app.mount('#app');
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (router);
 
 /***/ }),

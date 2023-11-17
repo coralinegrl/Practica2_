@@ -7,8 +7,10 @@
     <title>Andrea Saldaña Cavour - Currículum</title>
 </head>
 <body>
-    <div id="app"></div> <!-- Vue montará la aplicación aquí -->
-
+    <div id="app">
+        <home></home>
+        <router-link to="/portfolio">Ver Portafolio</router-link>
+    </div>
     <script src="{{ mix('js/main.js') }}"></script> <!-- Script de tu aplicación Vue -->
 </body>
 </html>

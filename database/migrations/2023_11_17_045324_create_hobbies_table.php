@@ -11,15 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('profiles', function (Blueprint $table) {
+        Schema::create('hobbies', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('lastname');
-            $table->string('email');
-            $table->string('city');
-            $table->string('country');
-            $table->string('summary');
+            $table->string('description');
+            $table->unsignedBigInteger('profile_id');
             $table->timestamps();
+            $table->foreign('profile_id')->references('id')->on('profiles');
         });
     }
 
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('profiles');
+        Schema::dropIfExists('hobbies');
     }
 };

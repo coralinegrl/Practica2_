@@ -5,6 +5,7 @@ import router from '../../src/router'; // Sube dos niveles y luego entra a src/
 import axios from 'axios';
 
 
+
 const app = createApp(App);
 app.use(router);
 app.mount('#app');
