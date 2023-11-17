@@ -13566,7 +13566,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   methods: {
     redirectToPortfolio: function redirectToPortfolio() {
-      // Redirige a la ruta "/portfolio"
       this.$router.push('/portfolio');
     }
   }
@@ -13943,17 +13942,25 @@ __webpack_require__.r(__webpack_exports__);
 var _withScopeId = function _withScopeId(n) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-8dc7cce2"), n = n(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)(), n;
 };
-var _hoisted_1 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Bienvenido", -1 /* HOISTED */);
+var _hoisted_1 = {
+  "class": "redirectToPortfolio"
+};
+var _hoisted_2 = {
+  "class": "text-center"
+};
+var _hoisted_3 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
+    "class": "text-4xl font-bold text-gray-800 mb-8"
+  }, "Bienvenido", -1 /* HOISTED */);
 });
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[0] || (_cache[0] = function () {
       return $options.redirectToPortfolio && $options.redirectToPortfolio.apply($options, arguments);
     }),
-    "class": "mt-4 px-4 py-2 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 transition duration-300 ease-in-out"
-  }, " Ir al portafolio ")]);
+    "class": "btn"
+  }, " Ir al portafolio ")])]);
 }
 
 /***/ }),
@@ -16272,7 +16279,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.redirectToPortfolio[data-v-8dc7cce2] {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    height: 100vh;\n    background-color: #f5f5f5;\n}\n.btn[data-v-8dc7cce2] {\n    padding: 1rem 2rem;\n    border-radius: 0.5rem;\n    background-color: #4caf50;\n    color: #fff;\n    font-size: 1.2rem;\n    cursor: pointer;\n    transition: all 0.3s ease;\n}\n.btn[data-v-8dc7cce2]:hover {\n    background-color: #388e3c;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.redirectToPortfolio[data-v-8dc7cce2] {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    height: 100vh;\n    background-color: #f5f5f5;\n}\n.btn[data-v-8dc7cce2] {\n    padding: 1rem 2rem;\n    border-radius: 0.5rem;\n    background-color: #10B981; /* Tailwind CSS green-500 */\n    color: #fff;\n    font-size: 1.2rem;\n    cursor: pointer;\n    transition: all 0.3s ease;\n}\n.btn[data-v-8dc7cce2]:hover {\n    background-color: #059669; /* Tailwind CSS green-600 */\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

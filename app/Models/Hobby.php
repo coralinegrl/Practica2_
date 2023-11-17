@@ -18,5 +18,6 @@ class Hobby extends Model
     {
         return $this->belongsTo(Profile::class);
     }
+    public $timestamps = false;
 
 }

@@ -26,5 +26,6 @@ class Profile extends Model
     {
         return $this->hasMany(Hobby::class);
     }
+    public $timestamps = false;
 }
 

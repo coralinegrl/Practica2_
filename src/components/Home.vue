@@ -1,21 +1,21 @@
 <template>
-    <div>
-      <h1>Bienvenido</h1>
-      <button @click="redirectToPortfolio" class="mt-4 px-4 py-2 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 transition duration-300 ease-in-out">
-        Ir al portafolio
-      </button>
+    <div class="redirectToPortfolio">
+      <div class="text-center">
+        <h1 class="text-4xl font-bold text-gray-800 mb-8">Bienvenido</h1>
+        <button @click="redirectToPortfolio" class="btn">
+          Ir al portafolio
+        </button>
+      </div>
     </div>
 </template>
 
-
 <script>
 export default {
-  methods: {
-    redirectToPortfolio() {
-      // Redirige a la ruta "/portfolio"
-      this.$router.push('/portfolio');
+    methods: {
+      redirectToPortfolio() {
+        this.$router.push('/portfolio');
+      },
     },
-  },
 };
 </script>
 
@@ -31,7 +31,7 @@ export default {
 .btn {
     padding: 1rem 2rem;
     border-radius: 0.5rem;
-    background-color: #4caf50;
+    background-color: #10B981; /* Tailwind CSS green-500 */
     color: #fff;
     font-size: 1.2rem;
     cursor: pointer;
@@ -39,7 +39,6 @@ export default {
 }
 
 .btn:hover {
-    background-color: #388e3c;
+    background-color: #059669; /* Tailwind CSS green-600 */
 }
 </style>
-
