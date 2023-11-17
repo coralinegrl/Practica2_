@@ -1,21 +1,26 @@
 <template>
-    <div class="about container">
-        <h2>Acerca de mí</h2>
-        <div class="about-content">
-            <p>Mi nombre es Andrea Saldaña, soy estudiante de Ingeniería Civil en Computación e Informática de la UCN.</p>
-        </div>
-    </div>
+    <section class="about container mx-auto py-4">
+        <h2 class="text-2xl font-bold mb-2">{{ heading }}</h2>
+        <p class="text-gray-600">{{ description }}</p>
+    </section>
 </template>
 
 <script>
 export default {
     name: 'Description',
-    // Your JavaScript code here
+    props: {
+        heading: {
+            type: String,
+            default: 'Acerca de mí'
+        },
+        description: {
+            type: String,
+            default: 'Mi nombre es Andrea Saldaña, soy estudiante de Ingeniería Civil en Computación e Informática de la UCN.'
+        }
+    }
 }
 </script>
 
 <style scoped>
-.about {
-    margin-bottom: 20px;
-}
+  /* Agrega estilos específicos para el componente aquí si es necesario */
 </style>

@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Obtener información del usuario
 Route::get('/user/{id}', [UserController::class, 'show']);
 
-// Obtener el perfil del usuario
-Route::get('/profile', [ProfileController::class, 'show']);
-?>
 
+Route::get('/profile', [ProfileController::class, 'getProfile']);
+?>

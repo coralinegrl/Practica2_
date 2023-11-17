@@ -8,67 +8,45 @@ use Illuminate\Http\Request;
 class ProfileController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display the profile page.
      */
-    public function index()
+    public function show()
     {
-        //
+        // Puedes pasar cualquier dato necesario a la vista aquí
+        $data = [];
+
+        return view('profile.show', $data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+    public function getProfile()
+{
+    // Obtener la información del perfil desde la base de datos o de donde corresponda
+    $profile = Profile::first(); // Asumiendo que tienes un modelo Profile configurado
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+    // Formatear los datos en el formato requerido
+    $data = [
+        'Name' => $profile->name,
+        'Lastname' => $profile->lastname,
+        'Email' => $profile->email,
+        'City' => $profile->city,
+        'Country' => $profile->country,
+        'Summary' => $profile->summary,
+        'Frameworks' => $profile->frameworks->map(function ($framework) {
+            return [
+                'Name' => $framework->name,
+                'Level' => $framework->level,
+                'Year' => $framework->year,
+            ];
+        }),
+        'Hobbies' => $profile->hobbies->map(function ($hobby) {
+            return [
+                'Name' => $hobby->name,
+                'Description' => $hobby->description,
+            ];
+        }),
+    ];
 
-
-     * Display the specified resource.
-     */
-    public function show(Profile $profile)
-    {
-        return response()->json([
-            'name' => $profile->name,
-            'lastname' => $profile->lastname,
-            'email' => $profile->user->email,
-            'city' => $profile->city,
-            'country' => $profile->country,
-            'summary' => $profile->summary,
-        ]);
-        return response()->json($profileData);
-    }
-
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Profile $profile)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Profile $profile)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Profile $profile)
-    {
-        //
-    }
+    // Devolver la respuesta como JSON
+    return response()->json($data);
+}
 }

@@ -10,10 +10,10 @@
         </div>
       </div>
     </header>
-  </template>
+</template>
 
-  <script>
-  export default {
+<script>
+export default {
     name: 'TopBar',
     props: {
       imageSrc: {
@@ -34,14 +34,12 @@
       }
     }
   }
-  </script>
+</script>
 
-  <style scoped>
+<style scoped>
   .container {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
   }
-
-  /* Añade estilos para img y .header-content si es necesario */
-  </style>
+</style>
