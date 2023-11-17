@@ -13,7 +13,7 @@ class Profile extends Model
         'lastname',
         'email',
         'city',
-        'conutry',
+        'country',
         'summary',
     ];
 

@@ -14113,18 +14113,21 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tailwindcss_tailwind_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tailwindcss/tailwind.css */ "./node_modules/tailwindcss/tailwind.css");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-/* harmony import */ var _src_App_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../src/App.vue */ "./src/App.vue");
-/* harmony import */ var _src_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../src/router */ "./src/router.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
+/* harmony import */ var _src_components_Home_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../src/components/Home.vue */ "./src/components/Home.vue");
+/* harmony import */ var _src_App_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../src/App.vue */ "./src/App.vue");
+/* harmony import */ var _src_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../src/router */ "./src/router.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
+
 
 
  // Sube dos niveles y luego entra a src/
  // Sube dos niveles y luego entra a src/
 
-var app = (0,vue__WEBPACK_IMPORTED_MODULE_1__.createApp)(_src_App_vue__WEBPACK_IMPORTED_MODULE_2__["default"]);
-app.use(_src_router__WEBPACK_IMPORTED_MODULE_3__["default"]);
+var app = (0,vue__WEBPACK_IMPORTED_MODULE_1__.createApp)(_src_App_vue__WEBPACK_IMPORTED_MODULE_3__["default"]);
+app.use(_src_router__WEBPACK_IMPORTED_MODULE_4__["default"]);
 app.mount('#app');
-axios__WEBPACK_IMPORTED_MODULE_4__["default"].get('/api/profile').then(function (response) {
+app.component('home', _src_components_Home_vue__WEBPACK_IMPORTED_MODULE_2__["default"]);
+axios__WEBPACK_IMPORTED_MODULE_5__["default"].get('/api/profile').then(function (response) {
   var profileData = response.data;
 
   // Ahora, puedes utilizar profileData para manipular los datos en tu aplicación Vue
@@ -14167,9 +14170,6 @@ var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_4__.createRouter)({
     component: _components_Profile_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   }]
 });
-var app = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)(_App_vue__WEBPACK_IMPORTED_MODULE_3__["default"]);
-app.use(router);
-app.mount('#app');
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (router);
 
 /***/ }),
