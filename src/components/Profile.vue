@@ -1,7 +1,7 @@
 <template>
     <div>
       <TopBar
-        imageSrc="yo.jpeg"
+        imageSrc="images/yo.jpeg"
         fullName="Andrea Saldaña Cavour"
         title="Creación de un Perfil Personal en HTML y Estilización con CSS"
       />
@@ -47,20 +47,23 @@ export default {
         };
     },
     mounted() {
-    // Realiza una solicitud GET a la API
-        axios.get('/api/profile')
-            .then(response => {
-                this.profileData = response.data;
-            })
-            .catch(error => {
-                console.error('Error al obtener el perfil:', error);
-            });
+        this.fetchProfileData();
     },
+    methods: {
+        fetchProfileData() {
+            axios.get('/api/profile')
+                .then(response => {
+                    this.profileData = response.data;
+                })
+                .catch(error => {
+                    console.error('Error al obtener el perfil:', error);
+                });
+        }
+    }
 
-    // Aquí puedes agregar data, methods, computed properties, etc., si son necesarios
 };
 </script>
 
-<style scoped>
+<style>
   /* Aquí van los estilos específicos para Profile.vue */
 </style>

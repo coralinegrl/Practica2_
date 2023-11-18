@@ -19,7 +19,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .redirectToPortfolio {
     display: flex;
     justify-content: center;

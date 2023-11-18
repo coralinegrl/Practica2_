@@ -1,10 +1,9 @@
 <template>
     <div class="interest border rounded-lg overflow-hidden shadow-md">
-      <img :src="image" :alt="altText" class="w-full max-w-xs mx-auto" />
-      <p class="text-center py-2">{{ title }}</p>
+        <img :src="image" :alt="altText" class="w-full max-w-xs mx-auto" />
+        <p class="text-center py-2 font-bold text-lg">{{ title }}</p> <!-- Texto en negrita y más grande -->
     </div>
-  </template>
-
+</template>
 
 <script>
 export default {
@@ -26,16 +25,17 @@ export default {
 }
 </script>
 
-<style scoped>
-  /* Estilos específicos para Hobby */
+<style>
 .interest {
+    margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
+    height: 200px;
 }
 
 .interest img {
-    width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
-    max-width: 100px; /* Máximo ancho de la imagen */
-    height: auto; /* Mantiene la proporción de la imagen */
+    width: 100px; /* Asegura que la imagen no exceda el ancho del contenedor */
+    height: 100px; /* Mantiene la proporción de la imagen */
+    margin-top: 20px;
 }
 </style>
