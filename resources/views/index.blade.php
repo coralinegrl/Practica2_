@@ -8,8 +8,7 @@
 </head>
 <body>
     <div id="app">
-        <home></home>
-        <router-link to="/portfolio">Ver Portafolio</router-link>
+        <profile></profile>
     </div>
     <script src="{{ mix('js/main.js') }}"></script> <!-- Script de tu aplicación Vue -->
 </body>

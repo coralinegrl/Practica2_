@@ -10,10 +10,7 @@ class ProfileController extends Controller
 
     public function getProfile()
     {
-    // Obtener la información del perfil desde la base de datos o de donde corresponda
-        $profile = Profile::first(); // Asumiendo que tienes un modelo Profile configurado
-
-    // Formatear los datos en el formato requerido
+        $profile = Profile::first();
         $formattedProfile = [
             'Name' => $profile->name,
             'Lastname' => $profile->lastname,

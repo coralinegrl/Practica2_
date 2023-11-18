@@ -32,5 +32,5 @@ export default {
 </script>
 
 <style>
-    /* No se requieren estilos personalizados adicionales gracias a Tailwind CSS */
+
 </style>

@@ -14,8 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return view('index');
+Route::get('/{any}', function () {
+    return view('Home.vue');
 });
+
+
+Route::get('/portfolio', function () {
+    return view('Home.vue');
+});
+
 
 
