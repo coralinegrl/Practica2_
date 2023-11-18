@@ -18,11 +18,11 @@ export default {
     props: {
       imageSrc: {
         type: String,
-        required: true // Marca la imagen como requerida
+        required: true
       },
       fullName: {
         type: String,
-        default: 'Andrea Saldaña Cavour' // Proporciona un valor por defecto
+        default: 'Andrea Saldaña Cavour'
       },
       title: {
         type: String,
@@ -30,7 +30,7 @@ export default {
       },
       altText: {
         type: String,
-        default: 'Andrea Saldaña' // Proporciona un valor por defecto para el alt text
+        default: 'Andrea Saldaña'
       }
     }
 }
@@ -38,13 +38,13 @@ export default {
 
 <style>
 .container img {
-    width: 100px; /* O el tamaño que prefieras */
-    height: 130px; /* Asegúrate de que width y height tengan el mismo valor para que sea redonda */
-    border-radius: 50%; /* Esto hará que la imagen sea completamente redonda */
-    margin-bottom: 1rem; /* Espacio entre la imagen y el texto */
+    width: 100px;
+    height: 130px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
 }
 .header-content {
-    text-align: center; /* Centra el texto horizontalmente */
+    text-align: center;
 
 }
 .bg-navy {

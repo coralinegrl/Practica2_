@@ -31,7 +31,7 @@ export default {
 .btn {
     padding: 1rem 2rem;
     border-radius: 0.5rem;
-    background-color: #10B981; /* Tailwind CSS green-500 */
+    background-color: #10B981;
     color: #fff;
     font-size: 1.2rem;
     cursor: pointer;
@@ -39,6 +39,6 @@ export default {
 }
 
 .btn:hover {
-    background-color: #059669; /* Tailwind CSS green-600 */
+    background-color: #059669;
 }
 </style>

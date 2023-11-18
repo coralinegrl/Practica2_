@@ -34,8 +34,8 @@ export default {
 }
 
 .interest img {
-    width: 100px; /* Asegura que la imagen no exceda el ancho del contenedor */
-    height: 100px; /* Mantiene la proporción de la imagen */
+    width: 100px;
+    height: 100px;
     margin-top: 20px;
 }
 </style>

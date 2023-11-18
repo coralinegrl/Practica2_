@@ -13,7 +13,7 @@
       <PersonalData />
 
       <Hobbies>
-        <!-- Aquí podrías pasar cada Hobby como un componente individual o manejarlos dentro de Hobbies.vue -->
+
       </Hobbies>
 
       <Frameworks />
@@ -43,7 +43,7 @@ export default {
     },
     data() {
         return {
-            profileData: null, // Almacenará los datos del perfil
+            profileData: null,
         };
     },
     mounted() {

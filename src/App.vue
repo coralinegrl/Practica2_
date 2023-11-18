@@ -20,7 +20,7 @@ export default defineComponent({
             name: "Portfolio",
             component: Profile,
           },
-          // Puedes agregar más rutas aquí si es necesario
+
         ],
       });
 

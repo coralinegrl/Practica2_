@@ -18,9 +18,6 @@ app.component('home', Home);
 axios.get('/api/profile')
     .then(response => {
         const profileData = response.data;
-
-        // Ahora, puedes utilizar profileData para manipular los datos en tu aplicación Vue
-        // Por ejemplo, asignarlos a una variable de datos o usarlos en un componente
         app.config.globalProperties.$profileData = profileData;
     })
     .catch(error => {
