@@ -22,10 +22,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // Obtener información del usuario
 Route::get('/user/{id}', [UserController::class, 'show']);
-
-
+//obtener perfil
 Route::get('/profile', [ProfileController::class, 'getProfile']);
 
-Route::put('/api/description', [DescriptionController::class, 'update']);
+Route::put('/description', [DescriptionController::class, 'update']);
 
 ?>

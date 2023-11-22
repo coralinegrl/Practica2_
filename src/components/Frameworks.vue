@@ -8,13 +8,32 @@
                         <th class="px-4 py-2 border">Tecnología</th>
                         <th class="px-4 py-2 border">Nivel</th>
                         <th class="px-4 py-2 border">Año</th>
+                        <th class="px-4 py-2 border">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="(framework, index) in frameworksList" :key="index" class="border">
-                        <td class="px-4 py-2 border">{{ framework.technology }}</td>
-                        <td class="px-4 py-2 border">{{ framework.level }}</td>
-                        <td class="px-4 py-2 border">{{ framework.year }}</td>
+                    <tr v-for="(framework, index) in localFrameworksList" :key="index" class="border">
+                        <td class="px-4 py-2 border">
+                            <div v-if="!framework.isEditing">{{ framework.technology }}</div>
+                            <input v-else v-model="framework.technology" type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                        </td>
+                        <td class="px-4 py-2 border">
+                            <div v-if="!framework.isEditing">{{ framework.level }}</div>
+                            <input v-else v-model="framework.level" type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                        </td>
+                        <td class="px-4 py-2 border">
+                            <div v-if="!framework.isEditing">{{ framework.year }}</div>
+                            <input v-else v-model="framework.year" type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                        </td>
+                        <td class="px-4 py-2 border">
+                            <span v-if="!framework.isEditing" @click="editFramework(framework)" class="cursor-pointer text-blue-500 hover:text-blue-700">
+                                <PencilIcon class="w-4 h-4 inline" />
+                            </span>
+                            <span v-else>
+                                <button @click="updateFramework(framework)" class="bg-green-500 text-white px-3 py-1 rounded-md">Guardar</button>
+                                <button @click="cancelEdit(framework)" class="bg-red-500 text-white px-3 py-1 rounded-md">Cancelar</button>
+                            </span>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -23,21 +42,48 @@
 </template>
 
 <script>
+import { PencilIcon } from '@heroicons/vue/solid';
+import axios from 'axios';
+
 export default {
     name: 'Frameworks',
     data() {
         return {
             heading: 'Herramientas Tecnológicas',
-            frameworksList: [
-                { technology: 'HTML', level: 'Básico', year: '2023' },
-                { technology: 'CSS', level: 'Básico', year: '2023' },
-                { technology: 'Vue', level: 'Intermedio', year: '2023' },
-
+            localFrameworksList: [
+                { technology: 'HTML', level: 'Básico', year: '2023', isEditing: false },
+                { technology: 'CSS', level: 'Básico', year: '2023', isEditing: false },
+                { technology: 'Vue', level: 'Intermedio', year: '2023', isEditing: false },
             ]
         };
+    },
+    methods: {
+        editFramework(framework) {
+            this.localFrameworksList.forEach(f => f.isEditing = false); // Cancelar otros modos de edición
+            framework.isEditing = true;
+        },
+        cancelEdit(framework) {
+            framework.isEditing = false;
+            // Aquí, restaurar los valores originales si es necesario
+        },
+        updateFramework(framework) {
+            framework.isEditing = false;
+            // Lógica para enviar la actualización
+            axios.put('/api/frameworks/' + framework.id, framework)
+                .then(response => {
+                    console.log('Actualización exitosa:', response.data);
+                })
+                .catch(error => {
+                    console.error('Error en la actualización:', error.response.data);
+                });
+        },
+    },
+    components: {
+        PencilIcon,
     }
 }
 </script>
+
 
 <style>
 .bg-blue-200 {

@@ -6,9 +6,7 @@
             title="Creación de un Perfil Personal en HTML y Estilización con CSS"
         />
 
-        <Description :heading="descriptionHeading" :description="userDescription" @open-edit-modal="openEditDescriptionModal = true" />
-        <EditInformationModal v-if="openEditDescriptionModal" @update-description="updateDescription" />
-
+        <Description />
 
         <PersonalData />
 
@@ -29,7 +27,6 @@ import Hobbies from './Hobbies.vue';
 import Frameworks from './Frameworks.vue';
 import SocialLinks from './SocialLinks.vue';
 import axios from 'axios';
-import EditInformationModal from '@/modals/EditInformationModal.vue';
 
 
 export default {
@@ -41,13 +38,10 @@ export default {
     Hobbies,
     Frameworks,
     SocialLinks,
-    EditInformationModal
 },
     data() {
         return {
             profileData: null,
-            showEditDescriptionModal: false,
-            openEditDescriptionModal: false,
         };
     },
     mounted() {
@@ -65,7 +59,7 @@ export default {
         },
         updateDescription(newDescription) {
             // Lógica para actualizar la descripción
-            this.openEditDescriptionModal = false;
+            this.description = newDescription;
         },
     }
 

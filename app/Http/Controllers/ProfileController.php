@@ -11,29 +11,33 @@ class ProfileController extends Controller
     public function getProfile()
     {
         $profile = Profile::first();
+        if ($profile === null) {
+            return response()->json([
+                'error' => 'No se ha encontrado el perfil',
+            ], 404);
+    }
         $formattedProfile = [
-            'Name' => $profile->name,
-            'Lastname' => $profile->lastname,
-            'Email' => $profile->email,
-            'City' => $profile->city,
-            'Country' => $profile->country,
-            'Summary' => $profile->summary,
-            'Frameworks' => $profile->frameworks->map(function ($framework) {
+            'name' => $profile->name,
+            'lastname' => $profile->lastname,
+            'email' => $profile->email,
+            'city' => $profile->city,
+            'country' => $profile->country,
+            'summary' => $profile->summary,
+            'frameworks' => $profile->frameworks ? $profile->frameworks->map(function ($framework) {
                 return [
-                    'Name' => $framework->name,
-                    'Level' => $framework->level,
-                    'Year' => $framework->year,
+                    'name' => $framework->name,
+                    'level' => $framework->level,
+                    'year' => $framework->year,
                 ];
-            }),
-            'Hobbies' => $profile->hobbies->map(function ($hobby) {
+            }) : [],
+            'hobbies' => $profile->hobbies ? $profile->hobbies->map(function ($hobby) {
                 return [
-                    'Name' => $hobby->name,
-                    'Description' => $hobby->description,
+                    'name' => $hobby->name,
+                    'description' => $hobby->description,
                 ];
-            }),
+            }) : [],
         ];
 
-        // Devolver la respuesta como JSON
         return response()->json($formattedProfile);
     }
 

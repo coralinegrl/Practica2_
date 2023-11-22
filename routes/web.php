@@ -13,15 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// routes/web.php
 
 Route::get('/{any}', function () {
-    return view('Home.vue');
-});
+    return view('index'); 
+})->where('any', '.*'); 
+
+// Si tienes rutas específicas en el backend, las puedes definir antes de esta
 
 
-Route::get('/portfolio', function () {
-    return view('Home.vue');
-});
+
+//Route::get('/portfolio', function () {
+ //   return view('Home.vue');
+//});
 
 
 

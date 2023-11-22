@@ -22,4 +22,6 @@ axios.get('/api/profile')
     })
     .catch(error => {
         console.error('Error al obtener el perfil:', error);
+        // Añade esta línea para mostrar un mensaje de error al usuario
+        app.config.globalProperties.$errorMessage = 'Error al obtener el perfil. Por favor, inténtalo de nuevo más tarde.';
     });
