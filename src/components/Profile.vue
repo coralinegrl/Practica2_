@@ -1,26 +1,25 @@
 <template>
     <div>
-      <TopBar
-        imageSrc="images/yo.jpeg"
-        fullName="Andrea Saldaña Cavour"
-        title="Creación de un Perfil Personal en HTML y Estilización con CSS"
-      />
+        <TopBar
+            imageSrc="images/yo.jpeg"
+            fullName="Andrea Saldaña Cavour"
+            title="Creación de un Perfil Personal en HTML y Estilización con CSS"
+        />
 
-      <Description
-        description="Mi nombre es Andrea Saldaña, soy estudiante de Ingeniería Civil en Computación e Informática de la UCN."
-      />
+        <Description :heading="descriptionHeading" :description="userDescription" @open-edit-modal="openEditDescriptionModal = true" />
+        <EditInformationModal v-if="openEditDescriptionModal" @update-description="updateDescription" />
 
-      <PersonalData />
 
-      <Hobbies>
+        <PersonalData />
 
-      </Hobbies>
+        <Hobbies />
 
-      <Frameworks />
+        <Frameworks />
 
-      <SocialLinks />
+        <SocialLinks />
     </div>
 </template>
+
 
 <script>
 import TopBar from './TopBar.vue';
@@ -30,20 +29,25 @@ import Hobbies from './Hobbies.vue';
 import Frameworks from './Frameworks.vue';
 import SocialLinks from './SocialLinks.vue';
 import axios from 'axios';
+import EditInformationModal from '@/modals/EditInformationModal.vue';
+
 
 export default {
     name: 'Profile',
     components: {
-      TopBar,
-      Description,
-      PersonalData,
-      Hobbies,
-      Frameworks,
-      SocialLinks
-    },
+    TopBar,
+    Description,
+    PersonalData,
+    Hobbies,
+    Frameworks,
+    SocialLinks,
+    EditInformationModal
+},
     data() {
         return {
             profileData: null,
+            showEditDescriptionModal: false,
+            openEditDescriptionModal: false,
         };
     },
     mounted() {
@@ -58,7 +62,11 @@ export default {
                 .catch(error => {
                     console.error('Error al obtener el perfil:', error);
                 });
-        }
+        },
+        updateDescription(newDescription) {
+            // Lógica para actualizar la descripción
+            this.openEditDescriptionModal = false;
+        },
     }
 
 };

@@ -8,6 +8,7 @@
 import { defineComponent } from "vue";
 import { createRouter, createWebHistory } from "vue-router";
 import Profile from "./components/Profile.vue"; // Asegúrate de ajustar la ruta a la ubicación real de Profile.vue
+import EditInformationModal from './modals/EditInformationModal.vue';
 
 export default defineComponent({
     name: "App",

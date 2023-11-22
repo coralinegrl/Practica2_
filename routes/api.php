@@ -25,4 +25,7 @@ Route::get('/user/{id}', [UserController::class, 'show']);
 
 
 Route::get('/profile', [ProfileController::class, 'getProfile']);
+
+Route::put('/api/description', [DescriptionController::class, 'update']);
+
 ?>
