@@ -67,5 +67,5 @@ export default {
 </script>
 
 <style>
-  /* Aquí van los estilos específicos para Profile.vue */
+  
 </style>

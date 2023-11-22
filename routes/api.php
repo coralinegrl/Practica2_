@@ -26,5 +26,10 @@ Route::get('/user/{id}', [UserController::class, 'show']);
 Route::get('/profile', [ProfileController::class, 'getProfile']);
 
 Route::put('/description', [DescriptionController::class, 'update']);
+Route::put('/frameworks', [FrameworkController::class, 'update']);
+Route::put('/hobby', [HobbyController::class, 'update']);
+Route::put('/social-links', [SocialLinkController::class, 'update']);
+Route::put('/personal-data', [PersonalDataController::class, 'update']);
+
 
 ?>
