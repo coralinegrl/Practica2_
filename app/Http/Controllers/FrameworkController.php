@@ -52,8 +52,21 @@ class FrameworkController extends Controller
      */
     public function update(Request $request, Framework $framework)
     {
-        //
+        $data = $request->validate([
+            'name' => 'required|string',
+            'level' => 'required|string',
+            'year' => 'required|integer',
+        ]);
+        $framework->name = $data['name'];
+        $framework->level = $data['level'];
+        $framework->year = $data['year'];
+    
+        $framework->save();
+    
+        return response()->json(['message' => 'Framework updated successfully', 'framework' => $framework]);
     }
+
+    
 
     /**
      * Remove the specified resource from storage.

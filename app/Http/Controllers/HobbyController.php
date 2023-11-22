@@ -52,7 +52,18 @@ class HobbyController extends Controller
      */
     public function update(Request $request, Hobby $hobby)
     {
-        //
+        $data = $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'nullable|string',
+        ]);
+
+        $hobby->name = $data['name'];
+        $hobby->description = $data['description'];
+
+        $hobby->save();
+
+        return response()->json(['message' => 'Hobby updated successfully', 'hobby' => $hobby]);
+    
     }
 
     /**
